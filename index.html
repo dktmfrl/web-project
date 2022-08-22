@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css">
+    <title>dktmfrl official website</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="main-head">
+                <img src="./images/dktmfrl.png"/>
+                <nav class="nav">
+                    <ul>
+                        <li class="links"><a href="#home">Home</a></li>
+                        <li class="links"><a href="#about">About</a></li>
+                        <li class="links"><a href="#project">Project</a></li>
+                        <li class="links"><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <section id="home">
+        <h1>Home</h1>
+    </section>
+    <section id="about">
+        <h1>About</h1>
+    </section>
+    <section id="project">
+        <h1>Project</h1>
+    </section>
+    <section id="contact">
+        <h1>contact</h1>
+    </section>
+    <script>
+        const li=document.querySelectorAll("links");
+        const sec=document.querySelectorAll("section");
+
+        function activeMenu(){
+            let len=sec.length;
+            while(--len && window.scrollY + 97 < sec[len].offsetTop){}
+            li.forEach(ltx => ltx.classList.remove("active"));
+            li[len].classList.add("active");
+        }
+        activeMenu;
+        window.addEventListener("scroll" , activeMenu);
+    </script>
+</body>
+</html>
